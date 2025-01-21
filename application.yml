@@ -1,0 +1,15 @@
+spring:
+
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      driver: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/quartz_db  # 주석처리된 DB 연결 정보
+      user: root
+      password: password
+      table-prefix: QRTZ_  # Quartz 기본 테이블 이름 앞에 붙는 접두사
+    scheduler:
+      instance-name: MyQuartzScheduler
+      instance-id: AUTO
+    thread-pool:
+      thread-count: 10
